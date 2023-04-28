@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md-sandbox
-# MAGIC 
+# MAGIC
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
 # MAGIC   <img src="https://databricks.com/wp-content/uploads/2018/03/db-academy-rgb-1200px.png" alt="Databricks Learning" style="width: 600px">
 # MAGIC </div>
@@ -9,26 +9,27 @@
 
 # MAGIC %md
 # MAGIC # Collections Lab - Word Count
-# MAGIC 
+# MAGIC
 # MAGIC Write a function that accepts a list of values and returns a dictionary with a count of the number of times each unique value appeared in the list.
 # MAGIC 0. The name of the function should be **`item_count`**
 # MAGIC 0. The function should have one parameter that is a list of values.
 # MAGIC 0. The function should return a diction where:
 # MAGIC   * The dictionary-key is the original value from the list
 # MAGIC   * The dictionary-value is the number of times the corresponding value appeared in the list.
-# MAGIC 
+# MAGIC
 # MAGIC For example, **`item_count(['a', 'b', 'a'])`** should return the dictionary **`{'a': 2, 'b': 1}`**
-# MAGIC 
+# MAGIC
 # MAGIC Hint: For every value, you will need to first test the dictionary to see if you already have a count for that value or not.
 
 # COMMAND ----------
 
 # TODO
-def FILL_IN(input)
+def item_count(input):
   output = {}          # Initialize an empty dictionary
   
   for item in input:   # Iterate over the list of values
-    FILL_IN            # Update the dictionary
+    if item not in output:
+      output[item] = input.count(item)          # Update the dictionary
       
   return output        # Return the dictionary
 
@@ -36,9 +37,9 @@ def FILL_IN(input)
 
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://s3-us-west-2.amazonaws.com/curriculum-release/images/105/logo_spark_tiny.png) Validate Your Answer
-# MAGIC 
+# MAGIC
 # MAGIC Once you have implemented and executed your solution, run the following cell to confirm that it produces correct results.
-# MAGIC 
+# MAGIC
 # MAGIC It should not raise any errors if you implemented the function correctly.
 
 # COMMAND ----------

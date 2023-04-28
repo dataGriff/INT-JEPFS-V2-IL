@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md-sandbox
-# MAGIC 
+# MAGIC
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
 # MAGIC   <img src="https://databricks.com/wp-content/uploads/2018/03/db-academy-rgb-1200px.png" alt="Databricks Learning" style="width: 600px">
 # MAGIC </div>
@@ -20,11 +20,11 @@
 
 # MAGIC %md
 # MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Lists
-# MAGIC 
+# MAGIC
 # MAGIC We've seen that a list is an ordered sequence of items and that a **`for-in`** expression can be used to iterate over them.
-# MAGIC 
+# MAGIC
 # MAGIC The items may be of any type, though in practice you'll usually create lists where all of the values are of the same type.
-# MAGIC 
+# MAGIC
 # MAGIC You typically create a list by providing comma-separated values enclosed by square brackets.
 
 # COMMAND ----------
@@ -37,7 +37,7 @@ print(breakfast_list)
 # MAGIC %md 
 # MAGIC ### Referencing Elements Of A List
 # MAGIC Elemets of a list are referenced by appending a pair of square brackets (which surround an index number) to the end the list variable.
-# MAGIC 
+# MAGIC
 # MAGIC It's important to note that in Python, lists are zero-indexed meaning that the first item is referenced by index zero.
 
 # COMMAND ----------
@@ -54,7 +54,7 @@ print(f"""The thrid item is "{thrid_item}".""")
 # COMMAND ----------
 
 # MAGIC %md When the length of a list is not know, you can employ the built in function **`len()`** to determine the length of the list and access the last item.
-# MAGIC 
+# MAGIC
 # MAGIC This is a common practice in many different programming languages.
 
 # COMMAND ----------
@@ -68,7 +68,7 @@ print(f"""The last item is "{last_item}".""")
 # COMMAND ----------
 
 # MAGIC %md But Python goes a long way to make hard things convenient. 
-# MAGIC 
+# MAGIC
 # MAGIC For example, you can access the last item in a list by counting backwards, as it where.
 
 # COMMAND ----------
@@ -147,7 +147,7 @@ print(f"After the remove:  {breakfast_list}")
 
 # MAGIC %md
 # MAGIC #### List Contains Value?
-# MAGIC 
+# MAGIC
 # MAGIC You can test for the presence or absence of an item in a list using the **`in`** and **`not in`** operations, respectively.
 
 # COMMAND ----------
@@ -164,11 +164,11 @@ if "bacon" not in breakfast_list:
 
 # MAGIC %md
 # MAGIC #### Built-in Functions for Lists
-# MAGIC 
+# MAGIC
 # MAGIC Python has built-in functions for determining the length, minimum, and maximum of a collection.
-# MAGIC 
+# MAGIC
 # MAGIC We already saw the **`len()`** function, but we can also use the **`min`** and **`max`** functions on a list.
-# MAGIC 
+# MAGIC
 # MAGIC Caution: What these functions return depend largely on the contents of the list.
 
 # COMMAND ----------
@@ -203,11 +203,11 @@ print(f"""The "max" value in the list is {max_value}.""")
 
 # MAGIC %md
 # MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Ranges
-# MAGIC 
+# MAGIC
 # MAGIC A _range_ represents an _immutable_ sequence of numbers.
-# MAGIC 
+# MAGIC
 # MAGIC It is commonly used for looping through a sequence of numbers with a **`for-in`** expression.
-# MAGIC 
+# MAGIC
 # MAGIC We saw this in action in the previous lesson.
 
 # COMMAND ----------
@@ -221,7 +221,7 @@ for i in range(1, 5):
 # COMMAND ----------
 
 # MAGIC %md But the **`range()`** function has a lot more versatility to it than just that...
-# MAGIC 
+# MAGIC
 # MAGIC Most loops start with zero, so the one-arg variant makes that assumption for you
 
 # COMMAND ----------
@@ -234,6 +234,11 @@ for i in range(5):
 
 # MAGIC %md
 # MAGIC We can also skip numbers by specifying the third parameter, **`step`** .
+
+# COMMAND ----------
+
+if 2 in range(5):
+  print(i)
 
 # COMMAND ----------
 
@@ -255,9 +260,9 @@ for i in range(12, 0, -3):
 
 # MAGIC %md
 # MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) List Comprehensions
-# MAGIC 
+# MAGIC
 # MAGIC A common task is to take a collection of values and create a new collection that is a transformation of the original values.
-# MAGIC 
+# MAGIC
 # MAGIC You can do this explicitly with a **`for-in`** expression.
 
 # COMMAND ----------
@@ -276,7 +281,7 @@ print(f"After transformation:  {caps_list}")
 
 # MAGIC %md
 # MAGIC A more compact and efficient technique to accomplish the same thing is a _list comprehension_. 
-# MAGIC 
+# MAGIC
 # MAGIC The following is equivalent to the example above:
 
 # COMMAND ----------
@@ -307,15 +312,15 @@ print(f"After filtering:  {short_list}")
 
 # MAGIC %md
 # MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Dictionaries
-# MAGIC 
+# MAGIC
 # MAGIC A Python <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict" target="_blank">dictionary</a> is a mutable collection of elements where each element is a key-value pair.
-# MAGIC 
+# MAGIC
 # MAGIC * All of the keys in a dictionary must be unique.
 # MAGIC * The keys must be of an immutable type, typically strings or integers.
 # MAGIC * The values may be mutable and of any type.
 # MAGIC * Prior to Python 3.6, dictionaries are _unordered_ collections. The order of elements can change as you add and delete elements.
 # MAGIC * In Python 3.6 and later, dictionaries are _ordered_ collections, which means that they keep their elements in the same order in which they were originally inserted.
-# MAGIC 
+# MAGIC
 # MAGIC You can create a dictionary like this:
 
 # COMMAND ----------
@@ -332,7 +337,7 @@ print(breakfast_dict)
 
 # MAGIC %md
 # MAGIC #### Accessing Dictionary Values
-# MAGIC 
+# MAGIC
 # MAGIC Once created, you can retrieve the value corresponding to a given key like this:
 
 # COMMAND ----------
@@ -356,9 +361,9 @@ print(f"Your {choice} had {apple_calories} calories.")
 
 # MAGIC %md
 # MAGIC Alternatively, you can use the dictionary **`get()`** method.
-# MAGIC 
+# MAGIC
 # MAGIC This returns the value for the given key if present.
-# MAGIC 
+# MAGIC
 # MAGIC If the key is not present in the dictionary, **`get()`** returns either the specified default value or **`None`**.
 
 # COMMAND ----------
@@ -375,7 +380,7 @@ print(f"Your {choiceB} had {caloriesB} calories.")
 
 # MAGIC %md
 # MAGIC ### Dictionary Contains Key?
-# MAGIC 
+# MAGIC
 # MAGIC You can test for the presence or absence of a key in a dictionary using the **`in`** and **`not in`** operators, respectively.
 
 # COMMAND ----------
@@ -397,7 +402,7 @@ else:
 
 # MAGIC %md
 # MAGIC #### Updating Dictionaries
-# MAGIC 
+# MAGIC
 # MAGIC Because a dictionary is a mutable collection, we can change its contents with operations like inserting, updating, and deleting elements.
 
 # COMMAND ----------
@@ -431,7 +436,7 @@ print(f"After delete:  {breakfast_dict}")
 
 # MAGIC %md
 # MAGIC #### Iterating Over the Elements of a Dictionary
-# MAGIC 
+# MAGIC
 # MAGIC You can use the **`for-in`** expression to iterate over the keys of a dictionary like this:
 
 # COMMAND ----------
@@ -459,15 +464,15 @@ for key_value in breakfast_dict.items():
 
 # MAGIC %md
 # MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Tuples
-# MAGIC 
+# MAGIC
 # MAGIC The method **`items()`** is returning a new data type called **`dict_items`** which is a sub-type of **`tuple`**.
-# MAGIC 
+# MAGIC
 # MAGIC We will elaborate on sub-types a bit later, but a **`tuple`** is an immutable sequence of values, much like a list.
-# MAGIC 
+# MAGIC
 # MAGIC As seen above, elements of a tuple are accessed like an array.
-# MAGIC 
+# MAGIC
 # MAGIC In this case, index **`0`** was the key and **`1`** was the value.
-# MAGIC 
+# MAGIC
 # MAGIC Here are some more examples...
 
 # COMMAND ----------
@@ -475,7 +480,7 @@ for key_value in breakfast_dict.items():
 dict_type = type(breakfast_dict.items())                # What type is it exactly?
 print(f"breakfast_dict.items() is of type {dict_type}") # Print the result
 
-my_tuple = ("apple", 100)                               # Create your own tuple
+my_tuple = ("apple", "apple")                               # Create your own tuple
 tuple_type = type(my_tuple)                             # What type is it exactly?
 print(f"my_tuple is of type {tuple_type}")              # Print the result
 
@@ -502,37 +507,37 @@ print(f"Age:  {age}")       # Print the age
 
 # MAGIC %md
 # MAGIC Back to our dictionary and our **`dict_items`**.
-# MAGIC 
+# MAGIC
 # MAGIC As a tuple, we can also unpack what was previously in the **`key_value`** variable:
 
 # COMMAND ----------
 
 print("Food          Calories")
 for food, calories in breakfast_dict.items():
-  print(f"{food:13} {calories}")
+  print(f"{food:13} {calories}") ##13 applies spacing
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Classes
-# MAGIC 
+# MAGIC
 # MAGIC A [_class_](https://www.w3schools.com/python/python_classes.asp) is a custom type that you can define that is in essence a custom data structure.
-# MAGIC 
+# MAGIC
 # MAGIC * The class definition itself serves as a "template" that you can use to create any number of individual _objects_ (also known as _instances_ in object oriented programming).
 # MAGIC * These objects will have the same characteristics and behaviors, but their own data values (also known as _attributes_ or _properties_ in OOP).
-# MAGIC 
+# MAGIC
 # MAGIC As an analogy, you can think of a class as though it were a blueprint for a house.
-# MAGIC 
+# MAGIC
 # MAGIC * The blueprint isn't a house itself, but it describes how to build a house.
 # MAGIC * From one blueprint (class), a developer could build any number of houses (objects/instances).
 # MAGIC * Each house would have the same floorplan, but each house could have its own unique paint colors, floor tiling, etc. (attributes/properties).
-# MAGIC 
+# MAGIC
 # MAGIC NOTE: We've already encountered and used classes in this course. 
-# MAGIC 
+# MAGIC
 # MAGIC For example, Python has a built-in **`str`** class that defines the capabilities of all strings. 
-# MAGIC 
+# MAGIC
 # MAGIC Similarly, **`list`** and **`dict`** are built-in classes defining the capabilities of lists and dictionaries, respectively. 
-# MAGIC 
+# MAGIC
 # MAGIC You can see that for yourself by using the **`help()`** function on these types:
 
 # COMMAND ----------
@@ -543,13 +548,13 @@ help(dict)
 
 # MAGIC %md
 # MAGIC #### Class Methods
-# MAGIC 
+# MAGIC
 # MAGIC A class definition usually consists of one or more function definitions, which are also called _methods_.
-# MAGIC 
+# MAGIC
 # MAGIC * These methods are automatically associated with each object created using the class.
 # MAGIC * When you invoke a method, Python automatically passes a reference to the associated object as the first argument, followed by any other arguments that you passed explicitly.
 # MAGIC * By convention, `self` is used as the parameter name for the object reference.
-# MAGIC 
+# MAGIC
 # MAGIC Here's a simple example of a class definition and its use:
 
 # COMMAND ----------
@@ -568,24 +573,24 @@ thing2.greet("Guten Tag!")    # Call the greet() method on thing2
 
 # MAGIC %md
 # MAGIC Wow, that's ugly. 
-# MAGIC 
+# MAGIC
 # MAGIC We can see that the value of `self` is different for `thing1` and `thing2` because each is a separate instance of `Thing`. 
-# MAGIC 
+# MAGIC
 # MAGIC But the string representation of `self` is not informative to us as programmers. 
-# MAGIC 
+# MAGIC
 # MAGIC To make things more interesting and useful, we need to define some class properties.
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC #### Class Properties and the Constructor Method
-# MAGIC 
+# MAGIC
 # MAGIC Class properties are usually defined in a special method called a _constructor_.
-# MAGIC 
+# MAGIC
 # MAGIC * The constructor method **must** be named `__init__()`.
 # MAGIC * Python calls the constructor method automatically whenever you create an instance of the class.
 # MAGIC * The purpose of the constructor is to initialize the newly created instance, most typically by setting the initial values of the object's properties.
-# MAGIC 
+# MAGIC
 # MAGIC The following is an example of a more interesting class that includes a constructor method that sets two properties and two additional methods:
 
 # COMMAND ----------

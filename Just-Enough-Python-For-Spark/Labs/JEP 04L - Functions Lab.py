@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md-sandbox
-# MAGIC 
+# MAGIC
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
 # MAGIC   <img src="https://databricks.com/wp-content/uploads/2018/03/db-academy-rgb-1200px.png" alt="Databricks Learning" style="width: 600px">
 # MAGIC </div>
@@ -9,7 +9,7 @@
 
 # MAGIC %md
 # MAGIC # Functions Lab
-# MAGIC 
+# MAGIC
 # MAGIC Building on the previous lab, the FizzBuzz Test, we are going to refactor that code into a function.
 # MAGIC 0. Declare a fucntion.
 # MAGIC   0. The name of the function should be **`fizzBuzz`**
@@ -21,7 +21,7 @@
 # MAGIC   0. Alter the print statements so that they return the corresponding value instead (e.g. return "Fizz" instead of printing "Fizz")
 # MAGIC   0. Ensure that the return value is always a string (**`str`**).</br>
 # MAGIC   Hint: See the built-in functions to convert numbers to string or employ an f-string.
-# MAGIC 
+# MAGIC
 # MAGIC Bonus: Update your function to use type hints.
 
 # COMMAND ----------
@@ -43,10 +43,17 @@ for num in range(1, 101):
 # COMMAND ----------
 
 # TODO
-def FILL_IN
-  assert FILL_IN
-  
-  if FILL_IN
+def fizzBuzz(num: int) -> str:
+  num_type = type(num)
+  assert num_type == int, f"The num value you passed is not an int it is an {num_type}"
+  output: str = num
+  if (num % 5 == 0) and (num % 3 == 0):
+    output = "FizzBuzz"
+  elif num % 5 == 0:
+    output = "Buzz"
+  elif num % 3 == 0:
+    output = "Fizz"
+  return str(output)
 
 # COMMAND ----------
 
@@ -87,18 +94,18 @@ assert result == expected, f"""Expected "{expected}", but found "{result}"."""
 # COMMAND ----------
 
 #TODO
-def FILL_IN        # Declare the function testFizzBuzz
-  result = FILL_IN # Call fizzBizz() with the specified value
-  assert FILL_IN   # Assert that the result is of type str
-  assert FILL_IN   # Assert that the result matches the expected value
+def testFizzBuzz(num:int, expected:str):       # Declare the function testFizzBuzz
+  result = fizzBuzz(num) # Call fizzBizz() with the specified value
+  assert type(result) == str, f"Expected actual to be of type str, but found {type(result)}."
+  assert result == expected, f"""Expected "{expected}", but found "{result}"."""
 
 test_numbers = [0, 1, 2, 3, 5, 15]
 expectations = ["FizzBuzz", "1", "2", "Fizz", "Buzz", "FizzBuzz"]
 
-for FILL_IN
-  num = FILL_IN
-  expected = FILL_IN
-  testFizzBuzz(FILL_IN)
+for x in range(0,len(test_numbers)):
+  num = test_numbers[x]
+  expected = expectations[x]
+  testFizzBuzz(num=num, expected=expected)
 
 # COMMAND ----------
 

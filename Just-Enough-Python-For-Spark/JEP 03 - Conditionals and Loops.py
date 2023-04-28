@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md-sandbox
-# MAGIC 
+# MAGIC
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
 # MAGIC   <img src="https://databricks.com/wp-content/uploads/2018/03/db-academy-rgb-1200px.png" alt="Databricks Learning" style="width: 600px">
 # MAGIC </div>
@@ -9,7 +9,7 @@
 
 # MAGIC %md
 # MAGIC # Conditionals and Loops
-# MAGIC 
+# MAGIC
 # MAGIC ## In this lesson you:
 # MAGIC - Create a simple list
 # MAGIC - Iterate over a list using a **`for`** expression
@@ -19,17 +19,17 @@
 
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) C-Style For Loops
-# MAGIC 
+# MAGIC
 # MAGIC If you have any programming experience in other structured programming languages, you should be familair with **C-Style For Loops**
-# MAGIC 
+# MAGIC
 # MAGIC If not, a little history wont hurt...
-# MAGIC 
+# MAGIC
 # MAGIC The classic c-style for loop will look something like this:
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC 
+# MAGIC
 # MAGIC ```
 # MAGIC for (i = 0; i < 10; i++) {
 # MAGIC   print(i)
@@ -48,18 +48,18 @@
 
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) For-In Loops
-# MAGIC 
+# MAGIC
 # MAGIC More modern programming languages such as Python, Scala, Java, and others, have abandoned if not deprecated this type of loop.
-# MAGIC 
+# MAGIC
 # MAGIC Instead they use a for-in methodology that amounts to executing a block of code once for every item in a list.
-# MAGIC 
+# MAGIC
 # MAGIC To see how this works, we need to first introduce a list - we will cover lists in more details in a latter section.
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC Let's make a <a href="https://docs.python.org/3/library/stdtypes.html#list" target="_blank">list</a> of what everyone ate for breakfast this morning.
-# MAGIC 
+# MAGIC
 # MAGIC <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Scrambed_eggs.jpg/1280px-Scrambed_eggs.jpg" width="20%" height="10%">
 
 # COMMAND ----------
@@ -78,7 +78,7 @@ print(breakfast_list)                            # Print the entire list
 # MAGIC * Removing items from a list
 # MAGIC * Concatenating lists
 # MAGIC * and so on...
-# MAGIC 
+# MAGIC
 # MAGIC For now, let's focus on iterating over a list and printing each individual item in the list:
 
 # COMMAND ----------
@@ -91,7 +91,7 @@ print("This is executed once because it is outside the for loop")
 # COMMAND ----------
 
 # MAGIC %md So how does one replicate a C-Style For Loop on a range of numbers in Python?
-# MAGIC 
+# MAGIC
 # MAGIC For that, we can use the <a href="https://docs.python.org/3/library/functions.html#func-range" target="_blank">range</a> function which produces an immutable collection of nubmers (a type of list).
 
 # COMMAND ----------
@@ -102,26 +102,26 @@ for i in range(0, 5):
 # COMMAND ----------
 
 # MAGIC %md We will talk more about collections in a later section including lists, ranges, dictionaries, etc.
-# MAGIC 
+# MAGIC
 # MAGIC The key thing to remember here is that they are all iterable and the **`for-in`** expression allows us to iterate over them.
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Conditionals
-# MAGIC 
+# MAGIC
 # MAGIC Before exploring loops further, let's take a look at conditionals.
-# MAGIC 
+# MAGIC
 # MAGIC At the end of this lesson, we combine these two concepts so as to develop more complex constructs.
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC 
+# MAGIC
 # MAGIC We don't always want to execute every line of code.
-# MAGIC 
+# MAGIC
 # MAGIC We can that process by employing **`if`**, **`elif`**, and **`else`** expressions.
-# MAGIC 
+# MAGIC
 # MAGIC We can see a few examples here:
 
 # COMMAND ----------
@@ -136,7 +136,7 @@ print("All done")
 # COMMAND ----------
 
 # MAGIC %md In the example above, line #5 is not executed.
-# MAGIC 
+# MAGIC
 # MAGIC Edit line #2 above and set the variable **`food`** to **`"eggs"`** and rerun the command.
 
 # COMMAND ----------
@@ -175,9 +175,9 @@ print("All done")
 
 # MAGIC %md
 # MAGIC What if the expression needs to be more complex?
-# MAGIC 
+# MAGIC
 # MAGIC For example, if I need syrup with waffles or pancakes?
-# MAGIC 
+# MAGIC
 # MAGIC Each **`if`** and **`elif`** expression can get increasignly more complex by adding more conditional statements and combining them with various **`and`** &amp; **`or`** operators
 
 # COMMAND ----------
@@ -200,7 +200,7 @@ print("All done")
 
 # COMMAND ----------
 
-food = "bacon"
+food = "waffles"
 
 if food != "eggs":
   if food == "waffles" or food == "pancakes":
@@ -216,9 +216,9 @@ print("All done")
 
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Loops & Conditionals
-# MAGIC 
+# MAGIC
 # MAGIC Lastly, let's take a look at how we can combine these two constructs.
-# MAGIC 
+# MAGIC
 # MAGIC Before we do, let's review the contents of our breakfast list:
 
 # COMMAND ----------
